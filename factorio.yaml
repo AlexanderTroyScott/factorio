@@ -22,5 +22,5 @@ services:
      - ./config/server-whitelist.json:/server-whitelist.json
     environment:
       UPDATE_MODS_ON_START: "TRUE"
-      USERNAME: "${USERNAME}"
+      #USERNAME: "${USERNAME}"
       TOKEN: "${TOKEN}"
