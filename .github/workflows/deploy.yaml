@@ -12,16 +12,7 @@ jobs:
       USERNAME: ${{ vars.USERNAME }}
       TOKEN: ${{ secrets.TOKEN }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          repository: 'alexandertroyscott/factorio'
-          ref: ${{ github.ref }}
-      - name: debug
-        run: |
-          pwd
-          ls ./
-      - name: Remove and redeploy services
+      - name: Remove running services
         run: |
           SERVICES=("headless_factorio") 
           for SERVICE_NAME in "${SERVICES[@]}"; do
@@ -31,5 +22,14 @@ jobs:
             else echo "Service $SERVICE_NAME is not running."
             fi
           done
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: 'alexandertroyscott/factorio'
+          ref: ${{ github.ref }}
+      - name: debug
+        run: |
+          pwd
+          ls ./
       - run: chmod -R 777 ./
       - run: docker stack deploy -c factorio.yaml headless
