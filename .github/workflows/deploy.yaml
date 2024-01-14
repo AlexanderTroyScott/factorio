@@ -17,6 +17,9 @@ jobs:
         with:
           repository: 'alexandertroyscott/factorio'
           ref: ${{ github.ref }}
+      - name: debug
+        run: |
+          pwd
       - name: Remove and redeploy services
         run: |
           SERVICES=("headless_factorio") 
