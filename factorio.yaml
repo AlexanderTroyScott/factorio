@@ -15,11 +15,13 @@ services:
     networks:
      - reverse-proxy
     volumes:
-     - /data/factorio:/factorio
-     - ./config/server-settings.json:/server-settings.json
-     - ./config/map-gen-settings.json:/map-gen-settings.json
-     - ./config/map-settings.json:/map-settings.json
-     - ./config/server-whitelist.json:/server-whitelist.json
+     - type: bind
+        source: ./config
+        target: /factorio/config/
+     #- ./config:/server-settings.json
+     #- ./config/map-gen-settings.json:/map-gen-settings.json
+     #- ./config/map-settings.json:/map-settings.json
+     #- ./config/server-whitelist.json:/server-whitelist.json
     environment:
       UPDATE_MODS_ON_START: "TRUE"
       USERNAME: "${USERNAME}"
