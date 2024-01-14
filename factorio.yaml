@@ -24,6 +24,5 @@ services:
      #- ./config/server-whitelist.json:/server-whitelist.json
     environment:
       UPDATE_MODS_ON_START: "TRUE"
-      USERNAME: "${USERNAME}"
-      PASSWORD: "${PASSWORD}"
+      GAME_PASSWORD: "${GAME_PASSWORD}"
       TOKEN: "${TOKEN}"
