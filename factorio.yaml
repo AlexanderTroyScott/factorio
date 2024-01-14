@@ -16,6 +16,6 @@ services:
          propagation: shared
          nonrecursive: true
     environment:
-     - UPDATE_MODS_ON_START: TRUE
-     - USERNAME: ${USERNAME}
-     - TOKEN: ${TOKEN}
+     - UPDATE_MODS_ON_START: "TRUE"
+     - USERNAME: "${USERNAME}"
+     - TOKEN: "${TOKEN}"
