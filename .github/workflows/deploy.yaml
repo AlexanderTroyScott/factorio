@@ -27,9 +27,5 @@ jobs:
         with:
           repository: 'alexandertroyscott/factorio'
           ref: ${{ github.ref }}
-      - name: debug
-        run: |
-          pwd
-          ls ./
       - run: chmod -R 777 ./
       - run: docker stack deploy -c factorio.yaml headless
