@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  factorio:
+    image: factoriotools/factorio:1.1.99
+    hostname: factorio
+    ports:
+     - "34197:34197/udp"
+     - "27015:27015/tcp"
+    volumes:
+     #- ./:/factorio
+     - type: bind
+        source: ./
+        target: /factorio
+        bind:
+          propagation: shared
+          nonrecursive: true
+    environment:
+     - UPDATE_MODS_ON_START = 'TRUE'
