@@ -20,6 +20,7 @@ jobs:
       - name: debug
         run: |
           pwd
+          ls ./
       - name: Remove and redeploy services
         run: |
           SERVICES=("headless_factorio") 
