@@ -18,12 +18,11 @@ services:
      - "34197:34197/udp"
      - "27015:27015/tcp"
     volumes:
-     - type: bind
-       source: ./
-       target: /factorio
-       bind:
-         propagation: shared
-         nonrecursive: true
+     - /data/factorio:/factorio
+     - ./config/server-settings.json:/server-settings.json
+     - ./config/map-gen-settings.json:/map-gen-settings.json
+     - ./config/map-settings.json:/map-settings.json
+     - ./config/server-whitelist.json:/server-whitelist.json
     environment:
       UPDATE_MODS_ON_START: "TRUE"
       USERNAME: "${USERNAME}"
