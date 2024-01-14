@@ -16,8 +16,8 @@ services:
      - reverse-proxy
     volumes:
      - type: bind
-        source: ./config
-        target: /factorio/config/
+       source: ./config
+       target: /factorio/config/
      #- ./config:/server-settings.json
      #- ./config/map-gen-settings.json:/map-gen-settings.json
      #- ./config/map-settings.json:/map-settings.json
