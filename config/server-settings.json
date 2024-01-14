@@ -14,10 +14,6 @@
     "lan": true
   },
 
-  "_comment_credentials": "Your factorio.com login credentials. Required for games with visibility public",
-  "username": "$USERNAME",
-  "password": "$PASSWORD",
- 
   "_comment_token": "Authentication token. May be used instead of 'password' above.",
   "token": "$TOKEN",
   
