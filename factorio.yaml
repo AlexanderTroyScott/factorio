@@ -4,11 +4,14 @@ services:
   factorio:
     image: factoriotools/factorio:1.1.99
     hostname: factorio
+    labels:
+     - "traefik.enable=true"
+     - "traefik.http.routers.factorio.rule=Host(`factorio.actuary.dev`)"
+     - "traefik.http.services.factorio.loadbalancer.server.port=34197"
     ports:
      - "34197:34197/udp"
      - "27015:27015/tcp"
     volumes:
-     #- ./:/factorio
      - type: bind
        source: ./
        target: /factorio
