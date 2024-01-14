@@ -10,6 +10,7 @@ jobs:
     runs-on: [HardwareName]
     env:
       USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
       TOKEN: ${{ secrets.TOKEN }}
     steps:
       - name: Remove running services
