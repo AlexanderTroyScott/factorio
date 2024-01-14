@@ -7,7 +7,7 @@ on:
       - init
 jobs:
   redeploy-service:
-    runs-on: [actuary]
+    runs-on: [personal]
     env:
       USERNAME: ${{ vars.USERNAME }}
       TOKEN: ${{ secrets.TOKEN }}
