@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 'alexandertroyscott/factorio'
-          ref: 'init'
+          ref: ${{ github.ref }}
       - name: Remove and redeploy services
         run: |
           SERVICES=("headless_factorio") 
