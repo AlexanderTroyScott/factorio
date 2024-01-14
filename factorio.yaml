@@ -2,6 +2,7 @@ version: "3.9"
 networks:
   reverse-proxy:
     driver: overlay
+    external: true
       
 services:
   factorio:
