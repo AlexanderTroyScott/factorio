@@ -10,11 +10,11 @@ services:
     volumes:
      #- ./:/factorio
      - type: bind
-        source: ./
-        target: /factorio
-        bind:
-          propagation: shared
-          nonrecursive: true
+       source: ./
+       target: /factorio
+       bind:
+         propagation: shared
+         nonrecursive: true
     environment:
      - UPDATE_MODS_ON_START: TRUE
      - USERNAME: ${USERNAME}
