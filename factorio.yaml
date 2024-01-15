@@ -8,6 +8,8 @@ services:
   factorio:
     image: factoriotools/factorio:1.1.99
     hostname: factorio
+    ports:
+      - "34197:34197"
     labels:
      - "traefik.enable=true"
      - "traefik.udp.routers.factorio.rule=Host(`factorio.actuary.dev`)"
