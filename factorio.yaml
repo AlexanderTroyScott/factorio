@@ -8,12 +8,13 @@ services:
   factorio:
     image: factoriotools/factorio:1.1.99
     hostname: factorio
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.udp.routers.factorio.rule=Host(`factorio.actuary.dev`)"
+        - "traefik.udp.services.factorio.loadbalancer.server.port=34197"
     ports:
       - "34197:34197"
-    labels:
-     - "traefik.enable=true"
-     - "traefik.udp.routers.factorio.rule=Host(`factorio.actuary.dev`)"
-     - "traefik.udp.services.factorio.loadbalancer.server.port=34197"
     networks:
      - reverse-proxy
     volumes:
