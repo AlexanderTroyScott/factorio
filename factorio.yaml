@@ -11,6 +11,7 @@ services:
     deploy:
       labels:
         - "traefik.enable=true"
+        - "traefik.http.routers.my-container.rule=Host(`factorio.actuary.dev`)"
         #- "traefik.udp.routers.factorio.rule=Host(`factorio.actuary.dev`)"
         - "traefik.udp.services.factorio.loadbalancer.server.port=34197"
     ports:
