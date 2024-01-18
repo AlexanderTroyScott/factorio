@@ -11,24 +11,15 @@ services:
     deploy:
       labels:
         - "traefik.enable=true"
-        #- "traefik.http.routers.factorio.rule=Host(`factorio.actuary.dev`)"
         - "traefik.udp.routers.factorio.entrypoints=factorio" #entrypoint->router
         - "traefik.udp.routers.factorio.service=factorio" #router -> service
         - "traefik.udp.services.factorio.loadbalancer.server.port=34197" #port of service
-        #- "traefik.udp.services.myudpservice.loadbalancer.server.port=34197"
-        #- "traefik.udp.services.factorio.loadbalancer.server.port=34197"
-    #ports:
-    #  - "34197:34197/udp"
     networks:
      - reverse-proxy
     volumes:
      - type: bind
        source: ./config
        target: /factorio/config/
-     #- ./config:/server-settings.json
-     #- ./config/map-gen-settings.json:/map-gen-settings.json
-     #- ./config/map-settings.json:/map-settings.json
-     #- ./config/server-whitelist.json:/server-whitelist.json
     environment:
       UPDATE_MODS_ON_START: "TRUE"
       GAME_PASSWORD: "${GAME_PASSWORD}"
