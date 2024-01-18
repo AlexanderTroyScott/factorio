@@ -17,8 +17,8 @@ services:
         - "traefik.udp.services.myudpservice.loadbalancer.server.port=34197"
         #- "traefik.udp.services.myudpservice.loadbalancer.server.port=34197"
         #- "traefik.udp.services.factorio.loadbalancer.server.port=34197"
-    ports:
-      - "34197:34197/udp"
+    #ports:
+    #  - "34197:34197/udp"
     networks:
      - reverse-proxy
     volumes:
