@@ -20,7 +20,9 @@ services:
      - type: bind
        source: ./config
        target: /factorio/config/
-     - saves:/factorio/saves/
+     - type: volume
+       source: saves
+       target: /factorio/saves/
     environment:
       UPDATE_MODS_ON_START: "TRUE"
       GAME_PASSWORD: "${GAME_PASSWORD}"
