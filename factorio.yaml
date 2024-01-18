@@ -31,4 +31,4 @@ services:
       GAME_PASSWORD: "${GAME_PASSWORD}"
       TOKEN: "${TOKEN}"
       GENERATE_NEW_SAVE: "TRUE"
-      LOAD_LATEST_SAVE: "TRUE"
+      #LOAD_LATEST_SAVE: "TRUE"
