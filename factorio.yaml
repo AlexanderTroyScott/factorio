@@ -6,7 +6,7 @@ networks:
       
 services:
   factorio:
-    image: factoriotools/factorio:1.1.99
+    image: factoriotools/factorio:latest
     hostname: factorio
     deploy:
       labels:
