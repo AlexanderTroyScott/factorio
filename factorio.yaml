@@ -13,8 +13,8 @@ services:
         - "traefik.enable=true"
         #- "traefik.http.routers.factorio.rule=Host(`factorio.actuary.dev`)"
         - "traefik.udp.routers.myudprouter.entrypoints=myudp"
-        - "traefik.udp.routers.myudprouter.service=myudpservice"
-        - "traefik.udp.services.myudpservice.loadbalancer.server.port=34197"
+        - "traefik.udp.routers.myudprouter.service=factorio"
+        - "traefik.udp.services.factorio.loadbalancer.server.port=34197"
         #- "traefik.udp.services.myudpservice.loadbalancer.server.port=34197"
         #- "traefik.udp.services.factorio.loadbalancer.server.port=34197"
     #ports:
