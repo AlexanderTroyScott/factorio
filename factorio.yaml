@@ -3,7 +3,10 @@ networks:
   reverse-proxy:
     driver: overlay
     external: true
-      
+    
+volumes:
+  saves:
+
 services:
   factorio:
     image: factoriotools/factorio:latest
