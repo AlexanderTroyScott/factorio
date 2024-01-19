@@ -32,4 +32,4 @@ services:
       TOKEN: "${TOKEN}"
       GENERATE_NEW_SAVE: "TRUE"
       SAVE_NAME: "Test_server_save.zip"
-      #LOAD_LATEST_SAVE: "TRUE"
+      LOAD_LATEST_SAVE: "TRUE"
