@@ -9,7 +9,7 @@ volumes:
 
 services:
   factorio:
-    image: factoriotools/factorio:latest
+    image: factoriotools/factorio:1.1.102
     hostname: factorio
     deploy:
       labels:
